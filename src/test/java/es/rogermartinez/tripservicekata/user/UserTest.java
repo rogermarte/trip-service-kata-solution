@@ -23,4 +23,13 @@ public class UserTest {
 
         assertThat(user.isFriendWith(PAUL), is(false));
     }
+
+    @Test
+    public void should_inform_when_users_are_friends() throws Exception {
+        User user = UserBuilder.aUser()
+                .friendWith(BOB, PAUL)
+                .build();
+
+        assertThat(user.isFriendWith(PAUL), is(true));
+    }
 }
